@@ -25,18 +25,19 @@ Route::post('/gallery/add', [
     'as' => 'add.image'
 ]);
 
-Route::post('/course/materials/upload', [
-    'middleware' => ['auth', 'admin'],
-    'uses' => 'HomeController@uploadMaterials',
-    'as' => 'upload.materials'
-]);
-
 Route::get('/course/materials/add', [
     
     'middleware' => ['auth', 'admin'],
     'uses' => 'HomeController@addMaterials',
     'as' => 'add.department.materials'
 ]);
+
+Route::post('/course/materials/upload', [
+    'middleware' => ['auth', 'admin'],
+    'uses' => 'HomeController@uploadMaterials',
+    'as' => 'upload.materials'
+]);
+
 
 Route::get('/dashboard', [
     
